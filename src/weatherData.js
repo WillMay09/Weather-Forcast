@@ -49,11 +49,11 @@ export const fetchWeather = async (location) =>{
 
     const weather = WeatherData();
 
-    
+    const currentWeather = null;
 
     try {
         // Await the async data fetch
-        const currentWeather = await weather.getData(location);
+         currentWeather = await weather.getData(location);
 
         // Log the returned values after the promise is resolved
         console.log(currentWeather.feelslike);
@@ -61,6 +61,12 @@ export const fetchWeather = async (location) =>{
         console.log(currentWeather.windSpeed);
     } catch (error) {
         console.error("Error fetching weather data:", error);
+    }
+
+    return{
+
+
+        currentWeather
     }
 }
 
