@@ -1,0 +1,2 @@
+import { fetchWeather } from "./weatherData";
+
