@@ -32,15 +32,29 @@ body{
 
 
   }
-  header{
+  header, footer{
     max-height: 6.25rem;
     width:100%;
     background-color: var(--highlight-color);
     display: flex;
+    padding: 1.25rem 3.06rem;
+
+  }
+
+  footer{
+
+    justify-content: space-between;
+    align-items: center;
+    font: var(--h6);
+
+  }
+
+  header{
+
     align-items: center;
     justify-content: center;
     gap: 2.56rem;
-    padding: 1.25rem 3.06rem;
+    
 
   }
   
@@ -128,9 +142,6 @@ body{
 }
 
 
-  footer{
-
-    padding: 1.25rem 3.06rem;
-  }
+  
 
   
