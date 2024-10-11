@@ -1,0 +1,136 @@
+*{
+
+    --primary-color: #FFFFFF;
+    --secondary-color: #FDFDFD;
+    --text-color: black;
+    --highlight-color:#399FCF;
+   
+    /* text */
+    --ff: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --h6: 1.2rem/1.6 var(--ff);
+    --h1: bold 3rem/1.6 var(--ff);
+
+
+}
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh; /* Full viewport height */
+  }
+  main{
+
+    flex: 1;
+
+
+  }
+  header{
+    max-height: 6.25rem;
+    width:100%;
+    background-color: var(--highlight-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.56rem;
+    padding: 1.25rem 3.06rem;
+
+  }
+  
+
+  .searchContainer{
+    
+    border-radius: 60px;
+
+  }
+  .tempContainer{
+
+    display: flex;
+    height: 3.75rem;
+    gap: 1.875rem;
+    width: 40rem ;
+    justify-content: center;
+}
+
+  .tempContainer button{
+
+    all:unset;
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    height:100%;
+    width: 19.0625rem;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animates hover */
+
+}
+
+.tempContainer button:hover{
+
+    transform: scale(1.05); /* Slightly enlarges on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+
+}
+.searchContainer form{
+
+    display: flex;
+    gap: 1.875rem;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    height: 3.75rem;
+    width: 59.43rem;
+
+
+}
+
+.searchContainer #searchInput{
+    width: 42.625rem;
+    border-radius: 60px;
+    height: 100%;
+    border: none;
+    
+
+}
+.searchContainer .searchButton{
+
+    
+    all:unset;
+    cursor: pointer;
+    width: 13.25rem;
+    border-radius: 60px;
+    background-color: var(--secondary-color);
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animates hover */
+
+
+}
+/* 2880 × 1864 */
+.searchContainer .searchButton:hover{
+    transform: scale(1.05); /* Slightly enlarges on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+
+    
+}
+
+
+  footer{
+
+    padding: 1.25rem 3.06rem;
+  }
+
+  
