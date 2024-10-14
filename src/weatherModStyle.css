@@ -1,0 +1,96 @@
+*{
+
+    --primary-color: #FFFFFF;
+    --secondary-color: #FDFDFD;
+    --text-color: black;
+    --highlight-color:#399FCF;
+    --gradient: linear-gradient(110deg, #8286B3, #A36EA5, #399FCF, #27B4CA);
+   
+    /* text */
+    --ff: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --h6: 1.2rem/1.6 var(--ff);
+    --h1: bold 3rem/1.6 var(--ff);
+
+
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 3.1rem;
+    gap: 2.44rem;
+}
+.tempDash{
+
+    width: 40rem;
+    height: 51rem;
+    border-radius: 60px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background: var(--gradient);
+
+
+}
+.weatherStats{
+
+    display: flex;
+    align-items: center;
+    gap: 1.5625rem;
+
+}
+.weatherStats .weather-tab{
+
+    width: 18.75rem;
+    height: 15.625rem;
+    border-radius: 60px;
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+
+
+}
+
+.firstSection{
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.06rem;
+
+}
+
+.secondSection{
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.06rem;
+
+
+}
+
+.iconTab{
+
+    width: 39rem;
+    height: 15rem;
+    border-radius: 60px;
+    background: var(--gradient);
+
+
+}
+.alignment{
+    display: flex;
+    gap: 1.5625rem;
+}
+
+.firstCol, .secondCol{
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.06rem;
+    
+
+
+}
+
+
