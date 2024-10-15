@@ -1,18 +1,29 @@
+
+@import url(https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap);
+
 *{
 
     --primary-color: #FFFFFF;
     --secondary-color: #FDFDFD;
-    --text-color: black;
+    --text-color: #575757;
     --highlight-color:#399FCF;
     --gradient: linear-gradient(110deg, #8286B3, #A36EA5, #399FCF, #27B4CA);
    
     /* text */
-    --ff: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --ff: 'Archivo', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     --h6: 1.2rem/1.6 var(--ff);
     --h1: bold 3rem/1.6 var(--ff);
+    box-sizing: border-box;
+
+}
+
+
+
+.archivo-bold{
 
 
 }
+
 
 .content{
     width: 100%;
@@ -48,8 +59,24 @@
     border-radius: 60px;
     background-color: var(--primary-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--text-color)
 
 
+
+}
+
+.weatherStats .weather-tab h1{
+
+    font: var(--h1);
+}
+
+.weatherStats .weather-tab h6{
+
+    font: var(--h6);
 }
 
 .firstSection{

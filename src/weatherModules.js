@@ -15,21 +15,21 @@ const createWeatherInfoDash = () =>{
 
     const weatherInfo = createElement({type: 'div', className: 'weatherStats'});
     const firstSection = createElement({type:'div', className: 'firstSection'});
-    const cloudiness = weatherTab('Cloudiness', '89%');
-    const wind = weatherTab('Cloudiness', '89%');
-    const sunrise = weatherTab('Cloudiness', '89%');
+    const cloudCover = weatherTab('Cloudcover', '89%');
+    const wind = weatherTab('Wind', '89%');
+    const sunrise = weatherTab('Sunrise', '89%');
 
     const iconContainer = iconTab("Rain", 'feels like 10', 'Cloud');
     const secondSection = createElement({type: 'div', className: 'secondSection'});
     const firstCol = createElement({type:'div', className: 'firstCol'});
-    const visibility = weatherTab('Cloudiness', '89%');
-    const sunset = weatherTab('Cloudiness', '89%');
+    const visibility = weatherTab('Visibility', '89%');
+    const sunset = weatherTab('Sunset', '89%');
     
     const secondCol = createElement({type: 'div', className: 'secondCol'});
-    const humidity = weatherTab('Cloudiness', '89%');
-    const gitHub = weatherTab('Cloudiness', '89%');
+    const humidity = weatherTab('Humidity', '89%');
+    const gitHub = weatherTab('GitHub', '89%');
 
-    firstSection.appendChild(cloudiness);
+    firstSection.appendChild(cloudCover);
     firstSection.appendChild(wind);
     firstSection.appendChild(sunrise);
     weatherInfo.appendChild(firstSection);
@@ -65,7 +65,7 @@ const iconTab = (description, feelsLike, icon) =>{
 
 const weatherTab = (description, statistic) =>{
     
-    const tab = createElement({type:'div', className: 'weather-tab'});
+    const tab = createElement({type:'div', className: `weather-tab ${description}`});
     const label = createElement({type: 'h6', className: `${description}-title`, textContent: description});
     const stat = createElement({type: 'h1', className: 'stat', textContent: statistic});
 

@@ -1,4 +1,4 @@
-const WeatherData = () =>{
+export const WeatherData = () =>{
 
     const getData = async (zipCode) =>{
 
@@ -12,12 +12,12 @@ const WeatherData = () =>{
         }
         
         const data = await response.json();
-        if ('error' in data) {
+        if ('error' in data) {// Check if there's an error in the data itself.
             throw Error(data.error);
         }
-
+        console.log(data);
         return {
-
+            cloudCover: data.days[0].cloudcover,
             feelslike: data.days[0].feelslike,
             windSpeed: data.days[0].windspeed,
             humidity: data.days[0].humidity,
@@ -27,7 +27,8 @@ const WeatherData = () =>{
             tempMax: data.days[0].tempmax,
             tempMin: data.days[0].tempmin,
             sunRise: data.days[0].sunrise,
-            sunSet: data.days[0].sunset
+            sunSet: data.days[0].sunset,
+            visibility: data.days[0].visibility,
 
 
 
@@ -49,7 +50,7 @@ export const fetchWeather = async (location) =>{
 
     const weather = WeatherData();
 
-    const currentWeather = null;
+    let currentWeather = null;
 
     try {
         // Await the async data fetch
@@ -70,5 +71,5 @@ export const fetchWeather = async (location) =>{
     }
 }
 
-const location = '07945';
-fetchWeather(location);
+// const location = '07945';
+// fetchWeather(location);
