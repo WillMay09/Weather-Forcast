@@ -12,6 +12,7 @@ document.getElementById('searchForm').addEventListener('submit',(event) =>{
     
 
     if(checkCode(searchedItem)){
+        displayWeather();
         updateDOM(searchedItem.trim());
 
     }else{
