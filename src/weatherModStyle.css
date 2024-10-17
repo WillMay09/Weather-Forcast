@@ -84,6 +84,7 @@
     -webkit-text-fill-color: transparent;
 
   }
+ 
 
 
 
@@ -144,8 +145,23 @@
     height: 15rem;
     border-radius: 60px;
     background: var(--gradient);
+    border-radius: 60px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-size: 300% 300%;
+    animation: gradient 15s infinite ease;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    
 
 
+}
+
+.iconTab .iconDescription, .iconTab .feelsLike,.iconTab .icon{
+
+    background: linear-gradient(130deg, white 30%, transparent 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .alignment{
     display: flex;

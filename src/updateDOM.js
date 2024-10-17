@@ -54,6 +54,10 @@ const selectWeatherElements = () => {
       tempMin: document.querySelector('.range .tempLow'),
       address: document.querySelector('.location'),
       dateTime: document.querySelector('.date'),
+      icon: document.querySelector('.iconTab .icon'),
+      iconTitle: document.querySelector('.iconTab .iconDescription'),
+      feelsLike: document.querySelector('.iconTab .feelsLike'),
+
 
 
     };
@@ -73,6 +77,9 @@ const selectWeatherElements = () => {
         elements.tempMin.textContent = `↓ ${currentWeather.tempMin}`
         elements.address.textContent = `${currentWeather.address}`
         elements.dateTime.textContent = `${currentWeather.datetime}`
+        elements.icon.textContent = `${currentWeather.icon}` 
+        elements.iconTitle.textContent= `${currentWeather.preciptype[0]}`
+        elements.feelsLike.textContent= `${currentWeather.description}`
 
      }else{
 
@@ -87,7 +94,9 @@ const selectWeatherElements = () => {
         elements.tempMin.textContent = `↓ ${toFahrenheit(currentWeather.tempMin)}`
         elements.address.textContent = `${currentWeather.address}`
         elements.dateTime.textContent = `${currentWeather.dateTime}`
-
+        elements.icon.textContent = `${currentWeather.icon}` 
+        elements.iconDescription.textContent= `${currentWeather.preciptype}`
+        elements.feelsLike.textContent= `${currentWeather.description}`
 
      }
     

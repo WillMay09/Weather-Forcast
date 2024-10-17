@@ -26,6 +26,7 @@ export const WeatherData = () =>{
             conditions: data.days[0].conditions,
             icon: data.days[0].icon,
             description: data.days[0].description,
+            precipType: data.days[0].preciptype,
             temperature: data.days[0].temp,
             tempMax: data.days[0].tempmax,
             tempMin: data.days[0].tempmin,
