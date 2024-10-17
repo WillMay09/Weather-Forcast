@@ -35,6 +35,7 @@ export const WeatherData = () =>{
             visibility: data.days[0].visibility,
             address: data.address,
             datetime: data.days[0].datetime,
+            conditions: data.days[0].conditions,
         
         }
 

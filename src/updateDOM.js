@@ -1,6 +1,6 @@
 import { fetchWeather } from "./weatherData";
 import { toFahrenheit, toMiles, toMilesPerHour} from "./convertWeather"
-   
+import 'font-awesome/css/font-awesome.min.css';
   let currentWeatherGlobal = null;
   const fahrenheitButton = document.querySelector('.fah button');
   const celsiusButton = document.querySelector('.cel button');
@@ -77,8 +77,8 @@ const selectWeatherElements = () => {
         elements.tempMin.textContent = `↓ ${currentWeather.tempMin}`
         elements.address.textContent = `${currentWeather.address}`
         elements.dateTime.textContent = `${currentWeather.datetime}`
-        elements.icon.textContent = `${currentWeather.icon}` 
-        elements.iconTitle.textContent= `${currentWeather.preciptype[0]}`
+        elements.icon.innerHTML = renderIcon(currentWeather.icon)
+        elements.iconTitle.textContent= `${currentWeather.conditions}`
         elements.feelsLike.textContent= `${currentWeather.description}`
 
      }else{
@@ -94,13 +94,19 @@ const selectWeatherElements = () => {
         elements.tempMin.textContent = `↓ ${toFahrenheit(currentWeather.tempMin)}`
         elements.address.textContent = `${currentWeather.address}`
         elements.dateTime.textContent = `${currentWeather.dateTime}`
-        elements.icon.textContent = `${currentWeather.icon}` 
+        elements.icon.innerHTML = renderIcon(currentWeather.icon)
         elements.iconDescription.textContent= `${currentWeather.preciptype}`
         elements.feelsLike.textContent= `${currentWeather.description}`
 
      }
     
   };
+
+  const renderIcon = (iconName) =>{
+
+    const iconHTML = `<img src="./icons/sunny.svg" alt="rain icon">`;
+    return iconHTML;
+  }
 
 
  fahrenheitButton.addEventListener('click', () =>{
