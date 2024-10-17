@@ -5,8 +5,19 @@ import "./weatherModStyle.css"
 const createTempDash = () =>{
 
     const tempDash = createElement({type: 'div', className: 'tempDash'});
+    const date = createElement({type:'h6', className: 'date'});
+    const temperature = createElement({type:'h1', className: 'temp'});
+    const tempRange = createElement({type: 'div', className: 'range'});
+    const tempHigh = createElement({type: 'h6', className: 'tempHigh'});
+    const tempLow = createElement({type: 'h6', className: 'tempLow'});
+    tempRange.appendChild(tempHigh);
+    tempRange.appendChild(tempLow);
+    const location  = createElement({type: 'h6', className: 'location'});
 
-
+    tempDash.appendChild(date);
+    tempDash.appendChild(temperature);
+    tempDash.appendChild(tempRange);
+    tempDash.appendChild(location);
     return  tempDash;
 
 }

@@ -32,14 +32,61 @@
 }
 .tempDash{
 
+    color: var(--text-color);
     width: 40rem;
     height: 51rem;
     border-radius: 60px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     background: var(--gradient);
-
+    background-size: 300% 300%;
+    animation: gradient 15s infinite ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 3rem;
+    padding-right: 3rem;
 
 }
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .tempDash .range{
+
+    display: flex;
+    gap: 0.5rem;
+
+  }
+  .tempDash .temp{
+
+    font: var(--h1);
+    background: linear-gradient(130deg, white 30%, transparent 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: auto;
+      
+
+  }
+
+  .tempDash .date, .tempDash .range, .tempDash .location{
+
+    font: var(--h6);
+    background: linear-gradient(130deg, white 30%, transparent 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+  }
+
+
+
 .weatherStats{
 
     display: flex;

@@ -1,7 +1,7 @@
 // webpack.config.js
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
+const webpack = require("webpack");
 module.exports = {
   mode: "development",
   entry: "./src/index.js",
@@ -14,6 +14,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/template.html",
     }),
+    new webpack.ProvidePlugin({
+      process: 'process/browser', // Polyfill for 'process'
+    })
   ],
   module: {
     rules: [
@@ -30,5 +33,14 @@ module.exports = {
         type: "asset/resource",
       },
     ],
+  },
+  resolve: {
+    fallback: {
+      "child_process": false, // Node.js module, not needed in browser
+      "path": require.resolve("path-browserify"), // Polyfill for 'path'
+      "fs": false, // Node.js module, not needed in browser
+      "util": require.resolve("util/"),
+      "process": require.resolve("process/browser"),
+    }
   },
 };

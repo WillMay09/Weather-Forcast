@@ -30,10 +30,17 @@ const toMiles = (kilometers) =>{
 
 }
 
-//from meters per hour
-const toMilesPerHour = (metersPerSecond) =>{
+const toKilometers = (miles) =>{
 
-    const mph = (metersPerSecond*2.237);
+    const km = (miles*1.609344);
+    return Math.round(km);
+
+}
+
+//from meters per hour
+const toMilesPerHour = (kiloPerHour) =>{
+
+    const mph = (kiloPerHour*0.62137119);
 
     return Math.round(mph);
 
