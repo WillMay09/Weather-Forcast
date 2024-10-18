@@ -1,9 +1,25 @@
 import { fetchWeather } from "./weatherData";
 import { toFahrenheit, toMiles, toMilesPerHour} from "./convertWeather"
 import 'font-awesome/css/font-awesome.min.css';
+
+import {snowyIcon, fogIcon, windIcon, partlyCloudyIcon, cloudIcon, rainIcon, sunIcon} from "./iconSVGs"
+
+const iconMap = {
+
+ "clear-day": sunIcon,
+  "rain": rainIcon,
+  "snow": snowyIcon,
+  "cloudy": cloudIcon,
+  "partly-cloudy-day": partlyCloudyIcon,
+  "wind": windIcon,
+  "fog": fogIcon
+
+
+}
   let currentWeatherGlobal = null;
   const fahrenheitButton = document.querySelector('.fah button');
   const celsiusButton = document.querySelector('.cel button');
+
 export const updateDOM = async (zipCode) =>{
 
     try{
@@ -103,9 +119,24 @@ const selectWeatherElements = () => {
   };
 
   const renderIcon = (iconName) =>{
+    const iconSVG = iconMap[iconName];//file path
+    
+    return iconSVG;
+  }
 
-    const iconHTML = `<img src="./icons/sunny.svg" alt="rain icon">`;
-    return iconHTML;
+  const applyGradientToSVG = (svgContent) =>{
+
+    const gradient = `
+    <defs>
+      <linearGradient id="svgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="30%" style="stop-color:white;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:transparent;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    `
+    const modifiedSVG = svgContent.replace('<svg', `<svg>${gradient}`);//adds gradient html text inside svg
+    return modifiedSVG.replace(/fill="[^"]+"/g, 'fill="url(#svgGradient)"');//finds all instances of the fill attribute and replaces with gradient
+
   }
 
 

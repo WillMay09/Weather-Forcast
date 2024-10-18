@@ -65,9 +65,11 @@ const iconTab = (description, feelsLike, icon) =>{
     const iconContainer = createElement({type: 'div', className: 'iconTab'});
     const title = createElement({type: 'h1', className:'iconDescription', textContent: description});
     const content = createElement({type: 'h6', className :'feelsLike', textContent: feelsLike});
+    const textContainer = createElement({type: 'div', className: "textContainer"});
     const imgContainer = createElement({type: 'div', className: 'icon'});
-    iconContainer.appendChild(title);
-    iconContainer.appendChild(content);
+    textContainer.appendChild(title);
+    textContainer.appendChild(content);
+    iconContainer.appendChild(textContainer);
     iconContainer.appendChild(imgContainer);
     return iconContainer;
 

@@ -16,6 +16,10 @@
     box-sizing: border-box;
 
 }
+svg *{
+
+  fill:linear-gradient(130deg, white 30%, transparent 100%);
+}
 
 
 
@@ -76,6 +80,7 @@
 
   }
 
+
   .tempDash .date, .tempDash .range, .tempDash .location{
 
     font: var(--h6);
@@ -111,6 +116,7 @@
 
 
 }
+
 
 .weatherStats .weather-tab h1{
 
@@ -150,18 +156,35 @@
     background-size: 300% 300%;
     animation: gradient 15s infinite ease;
     display: flex;
-    flex-direction: column;
-    padding-left: 2rem;
-    
-
-
+    flex-direction: row;
+    padding: 2rem;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 8rem;
 }
+.iconTab .textContainer{
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 2rem;
+  
+}
+
+
 
 .iconTab .iconDescription, .iconTab .feelsLike,.iconTab .icon{
 
     background: linear-gradient(130deg, white 30%, transparent 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+
+.iconTab .icon svg{
+  fill:linear-gradient(130deg, white 30%, transparent 100%);
+ 
+
 }
 .alignment{
     display: flex;
