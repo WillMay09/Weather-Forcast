@@ -120,24 +120,42 @@ const selectWeatherElements = () => {
 
   const renderIcon = (iconName) =>{
     const iconSVG = iconMap[iconName];//file path
-    
-    return iconSVG;
+    console.log(`Original SVG: ${iconSVG}`);
+    const modifiedSVG = applyGradientToSVG(iconSVG);
+    console.log(modifiedSVG);
+    return modifiedSVG;
   }
 
   const applyGradientToSVG = (svgContent) =>{
 
-    const gradient = `
+    //parse the svg as a string
+    const parser = new DOMParser();
+    const svgDoc = parser.parseFromString(svgContent,'image/svg+xml');
+    //apply the gradient
+    const gradientElement = svgDoc.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    gradientElement.innerHTML = `
     <defs>
       <linearGradient id="svgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="30%" style="stop-color:white;stop-opacity:1" />
         <stop offset="100%" style="stop-color:transparent;stop-opacity:1" />
       </linearGradient>
     </defs>
-    `
-    const modifiedSVG = svgContent.replace('<svg', `<svg>${gradient}`);//adds gradient html text inside svg
-    return modifiedSVG.replace(/fill="[^"]+"/g, 'fill="url(#svgGradient)"');//finds all instances of the fill attribute and replaces with gradient
+    `;
+    //add the gradient
+    const svgElement = svgDoc.getElementsByTagName('svg')[0];
+    svgElement.insertBefore(gradientElement,svgElement.firstChild);
 
-  }
+    // Modify the fill attributes to apply the gradient
+    const paths = svgElement.getElementsByTagName('path');
+    for (let i = 0; i < paths.length; i++) {
+      paths[i].setAttribute('fill', 'url(#svgGradient)');
+    }
+    // Serialize the modified SVG back to a string
+    const serializer = new XMLSerializer();
+    return serializer.serializeToString(svgElement);
+
+    };
+   
 
 
  fahrenheitButton.addEventListener('click', () =>{
