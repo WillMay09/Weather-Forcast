@@ -4,11 +4,13 @@
     --secondary-color: #FDFDFD;
     --text-color: black;
     --highlight-color:#399FCF;
-   
+    --ff: 'Archivo', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* --h6: 1.2rem/1.6 var(--ff);
     /* text */
-    --ff: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    --h6: 1.2rem/1.6 var(--ff);
-    --h1: bold 3rem/1.6 var(--ff);
+    --h4: clamp(1.4rem, 1.6vw, 1.75rem)/1.6 var(--ff);
+    --h1-bold: bold clamp(2rem, 4vw, 3rem)/1.6 var(--ff);
+    --h1: clamp(2rem, 4vw, 3rem)/1.6 var(--ff);
+    --h6: clamp(1rem, 1.2vw, 1.3rem)/1.6 var(--ff);
 
 
 }
@@ -40,8 +42,19 @@ body{
     background-color: var(--highlight-color);
     display: flex;
     padding: 1.25rem 3.06rem;
+    flex-direction: row;
 
   }
+  .header-wrapper{
+
+    margin: 0 auto;
+    width: 101rem;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 1.875rem;
+
+  }
+  
 
   footer{
 
@@ -55,24 +68,23 @@ body{
 
     align-items: center;
     justify-content: center;
-    gap: 2.56rem;
-    
+   
 
   }
   
-
   .searchContainer{
     
     border-radius: 60px;
+    flex: 1;
 
   }
   .tempContainer{
-
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     height: 3.75rem;
+    width: 100%;
     gap: 1.875rem;
-    width: 40rem ;
-    justify-content: center;
+    
 }
 
   .tempContainer button{
@@ -81,14 +93,14 @@ body{
     cursor: pointer;
     background-color: var(--secondary-color);
     height:100%;
-    width: 19.0625rem;
+    width: 100%;
     border-radius: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animates hover */
-
+    font: var(--h6)
 }
 
 .tempContainer button:hover{
@@ -99,22 +111,23 @@ body{
 }
 .searchContainer form{
 
-    display: flex;
+    display: grid;
     gap: 1.875rem;
-    justify-content: flex-start;
-    align-items: center;
+    grid-template-columns: 3fr 1fr;
     flex-direction: row;
+    width: 100%;
     height: 3.75rem;
-    width: 59.43rem;
+    font: var(--h6)
 
 
 }
 
 .searchContainer #searchInput{
-    width: 42.625rem;
+    /* width: 42.625rem; */
     border-radius: 60px;
     height: 100%;
     border: none;
+    width: 100%;
     
 
 }
@@ -123,10 +136,11 @@ body{
     
     all:unset;
     cursor: pointer;
-    width: 13.25rem;
+    /* width: 13.25rem; */
     border-radius: 60px;
     background-color: var(--secondary-color);
     height:100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
