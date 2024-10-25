@@ -8,7 +8,9 @@
     --text-color: #575757;
     --highlight-color:#399FCF;
     --gradient: linear-gradient(110deg, #2c3e50, #4c669f, #ec6f66, #f3a183, #f7b7a3);
-   
+    --gradient2: linear-gradient(180deg, #87CEEB 0%, #00BFFF 50%, #FFD700 100%);
+    --gradient3: linear-gradient(180deg, #A9A9A9 0%, #778899 50%, #2F4F4F 100%);
+    --shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
     /* text */
     --ff: 'Archivo', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     /* --h6: 1.2rem/1.6 var(--ff);
@@ -47,7 +49,8 @@ svg *{
     gap: 2.44rem;
 }
 .tempDash{
-
+    position: relative;
+    z-index: 1;
     color: var(--text-color);
     width: 100%;
     height: clamp(45rem, 51vw, 51.75rem);
@@ -67,6 +70,34 @@ svg *{
     margin-bottom: 1.5625rem;
     
 
+}
+.tempDash::before, .iconTab::before {
+  background-image: url('https://www.transparenttextures.com/patterns/otis-redding.png');
+  position: absolute;
+  inset: 0;
+  border-radius: 8rem;
+  z-index: 0;
+  content: '';
+}
+
+.tempDash::after, .iconTab::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1; /* Ensure the blurred background stays behind the grid item */
+  
+  /* Add a gradient, image, or color for the background */
+  background: var(--gradient); 
+  background-size: 300% 300%;
+  
+  /* Blur effect */
+  filter: blur(20px);
+  opacity: 0.8;
+  
+  animation: gradient 10s ease infinite;
 }
 @keyframes gradient {
     0% {
@@ -107,6 +138,7 @@ svg *{
     -webkit-text-fill-color: transparent;
 
   }
+
  
 
 
@@ -126,12 +158,13 @@ svg *{
     height: clamp(12rem, 15vw, 15.625rem); 
     border-radius: 60px;
     background-color: var(--primary-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: var(--shadow); /* Subtle shadow */
     padding-left: 2.8rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     color: var(--text-color)
+    
 
 
 
@@ -166,6 +199,8 @@ svg *{
 } */
 
 .iconTab{
+    position: relative;
+    z-index: 1;
     grid-column: span 2;
     width: 100%;
     height: clamp(12rem, 15vw, 15.625rem);  
@@ -195,7 +230,11 @@ svg *{
 
 .iconTab .iconDescription, .iconTab .feelsLike,.iconTab .icon{
 
-    background: linear-gradient(130deg, white 30%, transparent 100%);
+  background: linear-gradient(
+    170deg,
+    rgba(255, 255, 255, 0.85),
+    transparent 150%
+  );
     background-clip: text;
     -webkit-text-fill-color: transparent;
 
