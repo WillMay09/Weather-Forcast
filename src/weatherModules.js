@@ -25,36 +25,25 @@ const createTempDash = () =>{
 const createWeatherInfoDash = () =>{
 
     const weatherInfo = createElement({type: 'div', className: 'weatherStats'});
-    const firstSection = createElement({type:'div', className: 'firstSection'});
     const cloudCover = weatherTab('Cloudcover', '89%');
     const wind = weatherTab('Wind', '89%');
     const sunrise = weatherTab('Sunrise', '89%');
 
     const iconContainer = iconTab("Rain", 'feels like 10', 'Cloud');
-    const secondSection = createElement({type: 'div', className: 'secondSection'});
-    const firstCol = createElement({type:'div', className: 'firstCol'});
     const visibility = weatherTab('Visibility', '89%');
     const sunset = weatherTab('Sunset', '89%');
     
-    const secondCol = createElement({type: 'div', className: 'secondCol'});
     const humidity = weatherTab('Humidity', '89%');
     const gitHub = weatherTab('GitHub', '89%');
 
-    firstSection.appendChild(cloudCover);
-    firstSection.appendChild(wind);
-    firstSection.appendChild(sunrise);
-    weatherInfo.appendChild(firstSection);
-
-    secondSection.appendChild(iconContainer);
-    const alignmentContainer = createElement({type:'div', className:'alignment'})
-    firstCol.appendChild(visibility);
-    firstCol.appendChild(sunset);
-    secondCol.appendChild(humidity);
-    secondCol.appendChild(gitHub);
-    alignmentContainer.appendChild(firstCol);
-    alignmentContainer.appendChild(secondCol);
-    secondSection.appendChild(alignmentContainer);
-    weatherInfo.appendChild(secondSection);
+    weatherInfo.appendChild(cloudCover);
+    weatherInfo.appendChild(iconContainer);
+    weatherInfo.appendChild(wind);
+    weatherInfo.appendChild(sunrise);
+    weatherInfo.appendChild(visibility);
+    weatherInfo.appendChild(sunset);
+    weatherInfo.appendChild(humidity);
+    weatherInfo.appendChild(gitHub);
     return weatherInfo;
 
 
